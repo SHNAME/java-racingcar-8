@@ -3,6 +3,7 @@ package racingcar.model;
 import java.util.Arrays;
 import java.util.List;
 import racingcar.utils.Parser;
+import racingcar.validator.NameValidator;
 
 public class Cars {
     List<Car> carList;
@@ -12,7 +13,9 @@ public class Cars {
     }
 
     public static Cars of(String input) {
-        return new Cars(parseStringToCarList(input));
+        List<Car> cars = parseStringToCarList(input);
+        NameValidator.validateCarsFormat(cars);
+        return new Cars(cars);
     }
 
     private static List<Car> parseStringToCarList(String input) {

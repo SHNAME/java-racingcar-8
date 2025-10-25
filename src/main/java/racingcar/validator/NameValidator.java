@@ -11,6 +11,11 @@ public final class NameValidator {
         validateAlphabet(car);
     }
 
+    public static void validateCarsFormat(List<Car> cars) {
+        validateNameUnique(cars);
+    }
+
+
     private static void validateCarLength(Car car) {
         if (car.getName().isEmpty() || car.getName().length() > 5) {
             throw new IllegalArgumentException("1자 이상 5글자 이하로 자동차 이름을 입력해주세요");
