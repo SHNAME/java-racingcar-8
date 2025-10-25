@@ -6,26 +6,26 @@ import org.junit.jupiter.api.Test;
 import racingcar.validator.InputValidator;
 
 public class NameTest {
-    private final String SUCCESS_INPUT = "car1,car2,car3";
-    private final String FAIL_INPUT_FORMAT_ERROR = "car1,,car2";
-    private final String FAIL_INPUT_BLANK_ERROR = "";
 
 
     @Test
     void 입력_단에서_검증_성공() {
-        InputValidator.validateInputIsEmpty(SUCCESS_INPUT);
-        InputValidator.validateSeparatorInInput(SUCCESS_INPUT);
+        String successInput = "car1,car2,car3";
+        InputValidator.validateInputIsEmpty(successInput);
+        InputValidator.validateSeparatorInInput(successInput);
     }
 
     @Test
     void 입력_단에서_검증_실패_빈문자열_입력() {
-        Assertions.assertThatThrownBy(() -> InputValidator.validateInputIsEmpty(FAIL_INPUT_BLANK_ERROR))
+        String blankInput = "";
+        Assertions.assertThatThrownBy(() -> InputValidator.validateInputIsEmpty(blankInput))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void 입력_단에서_검증_실패_잘못된_형식입력() {
-        Assertions.assertThatThrownBy(() -> InputValidator.validateSeparatorInInput(FAIL_INPUT_FORMAT_ERROR))
+        String formatErrorInput = "car1,,car2";
+        Assertions.assertThatThrownBy(() -> InputValidator.validateSeparatorInInput(formatErrorInput))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
