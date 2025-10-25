@@ -6,7 +6,10 @@ import java.util.Set;
 import racingcar.model.Car;
 
 public final class NameValidator {
-
+    public static void validateCarFormat(Car car) {
+        validateCarLength(car);
+        validateAlphabet(car);
+    }
 
     private static void validateCarLength(Car car) {
         if (car.getName().isEmpty() || car.getName().length() > 5) {

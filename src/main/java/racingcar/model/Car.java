@@ -1,5 +1,7 @@
 package racingcar.model;
 
+import racingcar.validator.NameValidator;
+
 public class Car {
     String name;
     String count;
@@ -9,7 +11,9 @@ public class Car {
     }
 
     public static Car of(String carName) {
-        return new Car(carName);
+        Car car = new Car(carName);
+        NameValidator.validateCarFormat(car);
+        return car;
     }
 
     public String getName() {
