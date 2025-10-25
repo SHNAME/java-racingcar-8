@@ -4,7 +4,13 @@ public class Car {
     String name;
     String count;
 
-    public Car(String carName) {
+    private Car(String carName) {
         this.name = carName;
     }
+
+    public static Car of(String carName) {
+        return new Car(carName);
+    }
+
+
 }
