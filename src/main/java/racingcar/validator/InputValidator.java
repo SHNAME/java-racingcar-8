@@ -1,12 +1,13 @@
 package racingcar.validator;
 
+import racingcar.constant.ExceptionConstant;
 import racingcar.utils.Parser;
 
 public final class InputValidator {
 
     public static void validateInputIsEmpty(String userInput) {
         if (userInput.isBlank()) {
-            throw new IllegalArgumentException("빈 문자열을 입력했습니다. 다시 입력해 주세요");
+            throw new IllegalArgumentException(ExceptionConstant.EMPTY_INPUT_ERROR.getMessage());
         }
     }
 
@@ -19,7 +20,7 @@ public final class InputValidator {
 
     private static void checkNameIsNotBlank(String carName) {
         if (carName.isBlank()) {
-            throw new IllegalArgumentException("입력값에서 쉼표로 구분된 각 항목은 유효한 자동차 이름이어야 합니다.");
+            throw new IllegalArgumentException(ExceptionConstant.INVALID_INPUT_FORMAT.getMessage());
         }
     }
 
