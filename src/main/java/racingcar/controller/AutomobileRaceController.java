@@ -18,11 +18,15 @@ public class AutomobileRaceController {
         printTotalInputMessage();
         int count = getValidRoundCount();
         printExecutionHeaderMessage();
+        playRace(count, cars);
+        printFinalResult(cars.findWinners());
+    }
+
+    private void playRace(int count, Cars cars) {
         while (count > 0) {
             cars.playRound();
             count--;
         }
-        printFinalResult(cars.findWinners());
     }
 
     private void printCarNameInputMessage() {
