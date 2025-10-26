@@ -3,7 +3,7 @@ package racingcar.model;
 import racingcar.constant.SymbolConstant;
 import racingcar.validator.NameValidator;
 
-public class Car {
+public class Car implements Comparable<Car> {
     String name;
     int count;
 
@@ -33,5 +33,10 @@ public class Car {
     @Override
     public String toString() {
         return name + " : " + SymbolConstant.FORWARD_COUNT.getSymbol().repeat(count);
+    }
+
+    @Override
+    public int compareTo(Car other) {
+        return other.count - this.count;
     }
 }
