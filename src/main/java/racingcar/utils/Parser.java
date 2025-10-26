@@ -7,4 +7,8 @@ public final class Parser {
         return userInput.split(SymbolConstant.NAME.getSymbol());
     }
 
+    public static int parseStringToInt(String stringNumber) {
+        return Integer.parseInt(stringNumber);
+    }
+
 }
