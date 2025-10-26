@@ -1,7 +1,8 @@
 package racingcar.constant;
 
 public enum SymbolConstant {
-    NAME(",");
+    NAME(","),
+    FORWARD_COUNT("-");
 
 
     private final String symbol;

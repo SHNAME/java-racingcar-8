@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import racingcar.constant.SymbolConstant;
 import racingcar.validator.NameValidator;
 
 public class Car {
@@ -29,5 +30,8 @@ public class Car {
         this.count++;
     }
 
-
+    @Override
+    public String toString() {
+        return name + " : " + SymbolConstant.FORWARD_COUNT.getSymbol().repeat(count);
+    }
 }
