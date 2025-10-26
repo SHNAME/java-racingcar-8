@@ -20,5 +20,9 @@ public class Car {
         return name;
     }
 
+    public Boolean shouldMoveForward(int number) {
+        return number >= 4;
+    }
+
 
 }
