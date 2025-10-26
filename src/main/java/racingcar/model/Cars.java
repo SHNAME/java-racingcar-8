@@ -1,7 +1,6 @@
 package racingcar.model;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import racingcar.constant.MessageConstant;
 import racingcar.utils.NumberGenerator;
@@ -34,8 +33,8 @@ public class Cars {
     }
 
     private int findMaxDistance() {
-        Collections.sort(carList);
-        return carList.getFirst().getCount();
+        return carList.stream().mapToInt(Car::getCount)
+                .max().orElse(0);
     }
 
 
