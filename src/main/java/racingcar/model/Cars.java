@@ -27,7 +27,7 @@ public class Cars {
         printMovementResult();
     }
 
-    public List<Car> findWinners() {
+    public List<String> findWinners() {
         int maxDistance = findMaxDistance();
         return findCarByDistance(maxDistance);
     }
@@ -38,8 +38,9 @@ public class Cars {
     }
 
 
-    private List<Car> findCarByDistance(int maxDistance) {
-        return carList.stream().filter(car -> car.getCount() == maxDistance).toList();
+    private List<String> findCarByDistance(int maxDistance) {
+        return carList.stream().filter(car -> car.getCount() == maxDistance).
+                map(Car::getName).toList();
     }
 
     private void printMovementResult() {
