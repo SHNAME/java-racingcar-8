@@ -6,7 +6,8 @@ public enum ExceptionConstant {
     INVALID_INPUT_FORMAT("입력값에서 쉼표로 구분된 각 항목은 유효한 자동차 이름이어야 합니다."),
     EXCESS_CAR_NAME_LENGTH("1자 이상 5글자 이하로 자동차 이름을 입력해주세요"),
     INVALID_CAR_NAME("자동차 이름은 소문자와 대문자로 구성해주세요"),
-    DUPLICATE_CAR_NAME("자동차 이름은 중복될 수 없습니다.");
+    DUPLICATE_CAR_NAME("자동차 이름은 중복될 수 없습니다."),
+    INVALID_COUNT_FORMAT("전진 횟수는 1 이상의 양수만 입력할 수 있습니다.");
 
     private final String message;
 
