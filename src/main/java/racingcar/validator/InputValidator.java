@@ -18,6 +18,13 @@ public final class InputValidator {
         }
     }
 
+    public static void validateInputCount(String userInput) {
+        if (!userInput.matches("^[1-9][0-9]*$")) {
+            throw new IllegalArgumentException(ExceptionConstant.INVALID_COUNT_FORMAT.getMessage());
+        }
+    }
+
+
     private static void checkNameIsNotBlank(String carName) {
         if (carName.isBlank()) {
             throw new IllegalArgumentException(ExceptionConstant.INVALID_INPUT_FORMAT.getMessage());
