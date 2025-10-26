@@ -12,11 +12,8 @@ public class AutomobileRaceController {
     private OutputView outputView = new OutputView();
     private InputView inputView = new InputView();
 
-    public AutomobileRaceController() {
-        outputView.printMessage(MessageConstant.AUTOMOBILE_INPUT_MESSAGE);
-    }
-
     public void raceStart() {
+        printCarNameInputMessage();
         Cars cars = createCarsFromInput();
         printTotalInputMessage();
         int count = getValidRoundCount();
@@ -26,6 +23,10 @@ public class AutomobileRaceController {
             count--;
         }
         printFinalResult(cars.findWinners());
+    }
+
+    private void printCarNameInputMessage() {
+        outputView.printMessage(MessageConstant.AUTOMOBILE_INPUT_MESSAGE);
     }
 
     private void printExecutionHeaderMessage() {
