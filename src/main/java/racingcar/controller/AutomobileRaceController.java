@@ -1,5 +1,6 @@
 package racingcar.controller;
 
+import java.util.List;
 import racingcar.constant.MessageConstant;
 import racingcar.model.Cars;
 import racingcar.utils.Parser;
@@ -17,16 +18,32 @@ public class AutomobileRaceController {
 
     public void raceStart() {
         Cars cars = createCarsFromInput();
+        printTotalInputMessage();
         int count = getValidRoundCount();
-        while (count <= 0) {
+        printExecutionHeaderMessage();
+        while (count > 0) {
             cars.playRound();
             count--;
         }
+        printFinalResult(cars.findWinners());
+    }
+
+    private void printExecutionHeaderMessage() {
+        System.out.println();
+        outputView.printMessage(MessageConstant.EXECUTION_RESULT_MESSAGE);
+    }
+
+    private void printTotalInputMessage() {
+        outputView.printMessage(MessageConstant.TOTAL_COUNT_INPUT_MESSAGE);
+    }
+
+    private void printFinalResult(List<String> winnerList) {
+        outputView.printWinner(MessageConstant.WINNER_RESULT_MESSAGE, winnerList);
     }
 
     private Cars createCarsFromInput() {
         String carNameInput = getCarNameInput();
-        validateNameFormat(carNameInput);
+        validateCarNameFormat(carNameInput);
         return Cars.of(carNameInput);
     }
 
@@ -48,7 +65,7 @@ public class AutomobileRaceController {
         InputValidator.validateInputCount(countInput);
     }
 
-    private void validateNameFormat(String carNameInput) {
+    private void validateCarNameFormat(String carNameInput) {
         InputValidator.validateInputIsEmpty(carNameInput);
         InputValidator.validateSeparatorInInput(carNameInput);
     }

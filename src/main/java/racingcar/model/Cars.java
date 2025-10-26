@@ -2,7 +2,6 @@ package racingcar.model;
 
 import java.util.Arrays;
 import java.util.List;
-import racingcar.constant.MessageConstant;
 import racingcar.utils.NumberGenerator;
 import racingcar.utils.Parser;
 import racingcar.validator.NameValidator;
@@ -44,7 +43,7 @@ public class Cars {
     }
 
     private void printMovementResult() {
-        System.out.println(MessageConstant.EXECUTION_RESULT_MESSAGE.getMessage());
+
         carList.forEach(car -> System.out.println(car.toString()));
         System.out.println();
     }
