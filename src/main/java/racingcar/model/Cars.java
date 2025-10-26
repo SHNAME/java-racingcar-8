@@ -35,12 +35,12 @@ public class Cars {
 
     private int findMaxDistance() {
         Collections.sort(carList);
-        return carList.getFirst().count;
+        return carList.getFirst().getCount();
     }
 
 
     private List<Car> findCarByDistance(int maxDistance) {
-        return carList.stream().filter(car -> car.count == maxDistance).toList();
+        return carList.stream().filter(car -> car.getCount() == maxDistance).toList();
     }
 
     private void printMovementResult() {

@@ -4,8 +4,8 @@ import racingcar.constant.SymbolConstant;
 import racingcar.validator.NameValidator;
 
 public class Car implements Comparable<Car> {
-    String name;
-    int count;
+    private String name;
+    private int count;
 
     private Car(String carName) {
         this.name = carName;
@@ -39,4 +39,9 @@ public class Car implements Comparable<Car> {
     public int compareTo(Car other) {
         return other.count - this.count;
     }
+
+    public int getCount() {
+        return count;
+    }
+
 }
