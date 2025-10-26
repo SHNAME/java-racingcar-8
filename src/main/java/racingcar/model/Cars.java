@@ -1,6 +1,7 @@
 package racingcar.model;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import racingcar.constant.MessageConstant;
 import racingcar.utils.NumberGenerator;
@@ -25,6 +26,11 @@ public class Cars {
             attemptMove(car);
         }
         printMovementResult();
+    }
+
+    private int findMaxCount() {
+        Collections.sort(carList);
+        return carList.getFirst().count;
     }
 
     private void printMovementResult() {
