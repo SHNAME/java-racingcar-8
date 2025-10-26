@@ -4,10 +4,11 @@ import racingcar.validator.NameValidator;
 
 public class Car {
     String name;
-    String count;
+    int count;
 
     private Car(String carName) {
         this.name = carName;
+        this.count = 0;
     }
 
     public static Car of(String carName) {
@@ -22,6 +23,10 @@ public class Car {
 
     public Boolean shouldMoveForward(int number) {
         return number >= 4;
+    }
+
+    public void moveForward() {
+        this.count++;
     }
 
 
