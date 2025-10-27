@@ -11,7 +11,7 @@ public class OutputView {
     }
 
     public void printWinner(MessageConstant message, List<String> winnerList) {
-        String winnerName = String.join(SymbolConstant.NAME.getSymbol(), winnerList);
+        String winnerName = String.join(SymbolConstant.NAME.getSymbol() + " ", winnerList);
         System.out.println(message.getMessage() + " : " + winnerName);
     }
 
