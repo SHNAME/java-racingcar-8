@@ -36,14 +36,12 @@ public class Cars {
                 .max().orElse(0);
     }
 
-
     private List<String> findCarByDistance(int maxDistance) {
         return carList.stream().filter(car -> car.getCount() == maxDistance).
                 map(Car::getName).toList();
     }
 
     private void printMovementResult() {
-
         carList.forEach(car -> System.out.println(car.toString()));
         System.out.println();
     }
@@ -58,6 +56,5 @@ public class Cars {
     private static List<Car> parseStringToCarList(String input) {
         return Arrays.stream(Parser.splitInput(input)).toList().stream().map(Car::of).toList();
     }
-
 
 }

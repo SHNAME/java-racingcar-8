@@ -15,8 +15,7 @@ public final class NameValidator {
     public static void validateCarsFormat(List<Car> cars) {
         validateNameUnique(cars);
     }
-
-
+    
     private static void validateCarLength(Car car) {
         if (car.getName().isEmpty() || car.getName().length() > 5) {
             throw new IllegalArgumentException(ExceptionConstant.EXCESS_CAR_NAME_LENGTH.getMessage());
